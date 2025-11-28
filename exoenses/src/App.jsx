@@ -1,7 +1,9 @@
 
 import ExpenseContext from "./component/ExpenseContext"
+import ExpenseData from "./component/ExpenseData"
 import ExpenseForm from "./component/ExpenseForm"
 import ExpenseList from "./component/ExpenseList"
+
 
 const App = () => {
 
@@ -10,6 +12,7 @@ const App = () => {
 
       <ExpenseContext>
         <ExpenseForm />
+        <ExpenseData/>
         <ExpenseList />
       </ExpenseContext>
     </>

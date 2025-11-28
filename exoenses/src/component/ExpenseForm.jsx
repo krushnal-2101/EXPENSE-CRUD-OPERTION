@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ExpenseData from "./ExpenseData";
+
 
 const ExpenseForm = () => {
   const [input, setInput] = useState({
@@ -36,10 +38,10 @@ const ExpenseForm = () => {
 
   return (
     <>
-  <Container className="mt-3 border p-3 mb-5 bg-dark">
+      <Container className="mt-3 border p-3 mb-5 bg-dark">
         <Form onSubmit={handleSubmit}>
           <Row>
-            <Col md={6}>
+            <Col md={6}  >
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
@@ -68,30 +70,27 @@ const ExpenseForm = () => {
                   value={input.amount}
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput3"
-              >
+              <Form.Group className="mb-3">
                 <span className="text-white me-2 fw-bold">Credit</span>
                 <input
-                    id="credit"
-                    type="radio"
-                    onChange={(e) => handleInput("credit", e)}
-                    value={"credit"}
-                    name="credit"
+                  id="credit"
+                  type="radio"
+                  name="type"
+                  value="credit"
+                  checked={input.type === "credit"}
+                  onChange={(e) => handleInput("type", e)}
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-4"
-                controlId="exampleForm.ControlInput4"
-              >
-                <span className="text-white me-2 fw-bold">Debit</span>
+
+              <Form.Group className="mb-4">
+                <span className="text-white me-2 fw-bold">Debit</span>  
                 <input
-                    type="radio"
-                    id="debit"
-                    onChange={(e) => handleInput("debit", e)}
-                    value={"debit"}
-                    name="debit"
+                  id="debit"
+                  type="radio"
+                  name="type"
+                  value="debit"
+                  checked={input.type === "debit"}
+                  onChange={(e) => handleInput("type", e)}
                 />
               </Form.Group>
               <Form.Group
@@ -114,6 +113,9 @@ const ExpenseForm = () => {
                 </select>
               </Form.Group>
               <button className="px-5 rounded py-2 m-3">Add</button>
+            </Col>
+            <Col md={6}>
+              <ExpenseData/>
             </Col>
           </Row>
         </Form>

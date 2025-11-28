@@ -7,6 +7,10 @@ export const expense = createContext({
   update: () => {},
   deleteData: () => {},
   editValue: null,
+  balance:0,
+  debit: 0,
+  credit:0,
+
 });
 
 const ExpenseContext = ({ children }) => {
@@ -14,13 +18,15 @@ const ExpenseContext = ({ children }) => {
     {
       id: 1,
       title: "burger",
-      amount: "500",
+      amount: "500",  
       category: "food",
-      type: "debit",
+      type: "credit",
     },
   ];
 
   const [data, setData] = useState(initialState);
+
+    console.log("data", data);
 
   const [editValue, setEditValue] = useState(null);
 
@@ -73,12 +79,34 @@ const ExpenseContext = ({ children }) => {
     setData(remainData);
   };
 
+  const credit = data.filter((d) => d.type === "credit") .reduce((acc, curr) => {
+    acc += Number(curr.amount);
+    return acc;
+
+  }, 0)
+
+  const debit = data.filter((d) => d.type === "debit") .reduce((acc, curr) =>{
+    acc += Number(curr.amount)
+    return acc;
+  }, 0)
+
+  const balance = credit - debit;
+
+  console.log("credit", credit)
+
+  console.log("debit", debit)
+
+  console.log("balance", balance)
+
   const value = {
     add,
     list: data,
     update,
     editValue,
     deleteData,
+    credit,
+    debit,
+    balance,
   };
 
   return <expense.Provider value={value}>{children}</expense.Provider>;
