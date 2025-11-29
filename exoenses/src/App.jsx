@@ -12,7 +12,7 @@ const App = () => {
 
       <ExpenseContext>
         <ExpenseForm />
-        <ExpenseData/>
+       
         <ExpenseList />
       </ExpenseContext>
     </>

@@ -11,7 +11,7 @@ const ExpenseList = () => {
     <>
      
      <Container className="bg-dark">
-       <h1 className="text-center p-3 text-white">EXPENSE DATA</h1>
+       <h1 className="text-center p-3 " style={{color:"gray"}}>EXPENSE DATA</h1>
        <Table className="bg-dark">
         <thead>
           <tr>

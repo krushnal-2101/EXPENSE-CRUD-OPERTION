@@ -115,7 +115,7 @@ const ExpenseForm = () => {
               <button className="px-5 rounded py-2 m-3">Add</button>
             </Col>
             <Col md={6}>
-              <ExpenseData/>
+              <ExpenseData/>  
             </Col>
           </Row>
         </Form>

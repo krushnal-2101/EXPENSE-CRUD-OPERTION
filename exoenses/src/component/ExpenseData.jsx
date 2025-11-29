@@ -6,14 +6,12 @@ const ExpenseData = () => {
 
   return (
     <>
-
       <div style={{color:"white"}} className=" text-center ">
-        <h1 className="p-3 ">EXPENSE BALANCE</h1>
-        <h1>CREDIT: {credit}</h1>
-        <h1 >DEBIT: {debit}</h1>
-        <h1 >TOTAL: {balance}</h1>
+        <h1 className="p-3 " style={{color:"gray"}}>EXPENSE BALANCE</h1>
+        <h1 className="p-2 m-4 bg-secondary  border">CREDIT: {credit}</h1>
+        <h1 className="p-2 m-4 bg-secondary border">DEBIT: {debit}</h1>
+        <h1 className="p-2 m-4 bg-secondary border">TOTAL: {balance}</h1>
       </div>
-
     </>
   );
 };
