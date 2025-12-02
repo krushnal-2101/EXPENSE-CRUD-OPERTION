@@ -10,7 +10,7 @@ import ExpenseData from "./ExpenseData";
 const ExpenseForm = () => {
   const [input, setInput] = useState({
     title: "",
-    amount: 0,
+    amount: "",
     type: "debit",
     category: "",
   });
