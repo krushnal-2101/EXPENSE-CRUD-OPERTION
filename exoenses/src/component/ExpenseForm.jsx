@@ -38,7 +38,7 @@ const ExpenseForm = () => {
 
   return (
     <>
-      <Container className="mt-3 border p-3 mb-5 bg-dark">
+      <Container className="mt-3 border p-4 mb-5 rounded-5 " style={{backgroundColor:"rgb(0 66 79)"}}>
         <Form onSubmit={handleSubmit}>
           <Row>
             <Col md={6}  >
