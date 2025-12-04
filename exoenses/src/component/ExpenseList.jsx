@@ -101,7 +101,7 @@ const ExpenseList = () => {
             </Form.Select>
           </Col>
         </Row>
-        <Table className="bg-dark">
+        <Table className="bg-dark" responsive>
           <thead>
             <tr>
               <th className=" text-white" style={{backgroundColor:"rgb(0 34 41)"}}>TITLE</th>
